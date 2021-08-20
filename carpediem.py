@@ -71,5 +71,5 @@ t.forward(25)
 t.write("Carpediem",font=("Verdana",15,"normal"))
 t.hideturtle()
 
-input("")
+input()
 
