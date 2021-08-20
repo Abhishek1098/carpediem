@@ -3,19 +3,22 @@
 import turtle
 import easygui
 from datetime import date
-import time
+import os
+
+THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+my_file = os.path.join(THIS_FOLDER, 'carpediem_helper.txt')
 
 t = turtle.Turtle()
 t.speed("fastest")
 t.fillcolor("violet")
 
-file = open('carpediem_helper.txt', 'r+')
+file = open(my_file, 'r+')
 saved_birthday = file.readline()
 #print(saved_birthday)
 file.close()
 if(saved_birthday == ""):
     user_input = easygui.enterbox("When is your birthday?")
-    file = open('carpediem_helper.txt', 'w+')
+    file = open(my_file, 'w+')
     file.write(user_input)
     file.close()
 else:
@@ -68,5 +71,5 @@ t.forward(25)
 t.write("Carpediem",font=("Verdana",15,"normal"))
 t.hideturtle()
 
-time.sleep(300)
+input("")
 
